@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moras Music</title>
+    <!-- favicon: https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/moras_logo_nsfst6 -->
+    <link rel="icon" type="image/x-icon" href="https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/pfe3rwjzybuugwsqiz4w" />
+  </head>
+  <body>
+    <!-- background image, icon in the corner, image as title
+        down this we have 4 links as images to the social media, youtube, spotify, apple music, instagram
+    -->
+    <div class="container">
+      <div class="background-image"></div>
+      <div class="title">
+        <img src="https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/iqifgq68lqn8veqxtwc0" alt="title" width="60%" />
+      </div>
+      <div class="icon"></div>
+
+      <div class="social-media">
+        <div class="row">
+          <div class="youtube">
+            <a href="https://www.youtube.com/@imoras10" target="_blank">
+              <img src="https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/uzf7boxu7ovy1czbhpwu" alt="youtube" />
+            </a>
+          </div>
+          <div class="spotify">
+            <a href="#" target="_blank">
+              <img src="https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/spotify_dim1dv" alt="spotify" />
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="apple-music">
+            <a href="#" target="_blank">
+              <img src="https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/apple_epe4uh" alt="apple music" />
+            </a>
+          </div>
+          <div class="instagram">
+            <a href="#" target="_blank">
+              <img src="https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/instegram_ddet3j" alt="instagram" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+    }
+
+    .container {
+      margin: auto;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* max-width: 1440px; */
+    }
+
+    .background-image {
+      z-index: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /*
+      desktop
+      position on the top of the page, and stretch to the bottom if needed
+       https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/desktop_bg_s9doqh
+        tablet
+        position on the bottom 40% of the page, and stretch to the top if needed
+      https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/phone_bg_rvr6wj
+       */
+      background-image: url("https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/desktop_bg_s9doqh");
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+    }
+
+    .icon {
+      /* moras logo at the top left corner */
+      /* css var to width */
+      width: 150px; /* 3.22592593 */
+      height: calc(150px / 3.22592593);
+      background-image: url("https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/pfe3rwjzybuugwsqiz4w");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .title {
+      z-index: 1;
+      /* display the image in the header of the page */
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* transform: translate(0, 50%); */
+    }
+    .social-media {
+      z-index: 3;
+      /* on desktop we display the icons as 2 rows of 2 icons as big as they can fit spreaded to the sideds
+      on mobile we display the icons as 4 rows of 1 icon as big as they can fit*/
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translate(0, -65px);
+      /* margin-top: 250px; */
+      width: 100%;
+    }
+
+    .social-media .row {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .social-media .row div a {
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+    }
+
+    .social-media .row div a img {
+      width: 100%;
+      max-width: 250px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .title {
+        transform: translate(0, 28%);
+      }
+      .background-image {
+        background-image: url("https://res.cloudinary.com/ms-global/image/upload/f_auto,q_auto/v1/moras/phone_bg_rvr6wj");
+        background-size: cover;
+        background-position: bottom;
+        background-repeat: no-repeat;
+      }
+
+      .container {
+        width: 100vw;
+      }
+
+      .social-media {
+        margin-top: 80px;
+        gap: 10px;
+      }
+
+      .social-media .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .social-media .row div a img {
+        max-height: 17vh;
+      }
+    }
+  </style>
+</html>
